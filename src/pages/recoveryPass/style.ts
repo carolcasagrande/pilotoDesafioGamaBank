@@ -71,8 +71,7 @@ export const Form = styled.form`
         font-size: 16px;
         font-weight: 500;
         &:hover{
-            background: #9B9B9B;
-            color: #878686;
+            background: #9B9B9B;            
         }
     }
 
