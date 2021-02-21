@@ -1,122 +1,99 @@
 import styled from 'styled-components';
+import backgroundImg from "../../img/happyhome.png";
 
-export const Header = styled.header`
-    display: flex;
+
+export const Header = styled.div`
+    img{
+        margin: 40px;
+    }
+`
+
+export const LoginPage = styled.div`
+    background-color: #8C52E5;
+    background-image: url(${backgroundImg});
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-top: -40px;
+    display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    a {
-        display: flex;
+    .login-div{
+        display:block;
         align-items: center;
-        text-decoration: none;
-        color: #a8a8b3;
-        transition: color 0.2s;
-
-        &:hover{
-            color: #666;
-        }
-
-        svg {
-            margin-right: 4px;
-        }
-    }
-`
-
-export const RepositoryInfo = styled.section`
-    margin-top: 80px;
-
-    header {
-        display: flex;
-        align-items: center;
-
-        img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-        }
-
-        div {
-            margin-left: 24px;
-
-            strong {
-                font-size: 36px;
-                color: 	#545454;
-            }
-
-            p {
-                font-size: 18px;
-                color: #929292;
-                margin-top: 4px;
-            }
-
-        }
-    }
-
-    ul{
-        display: flex;
-        list-style: none;
-        margin-top: 40px;
-
-        li {
-
-            & + li{
-                margin-left: 80px;
-            }
-
-            strong{
-                display: block;
-                font-size: 36px;
-                font-weight: bold;
-                color: #3d3d4d;
-            }
-            span {
-                display: block;
-                margin-top: 4px;
-                color: #949494;
-            }
-        }
-    }
-
-`
-
-export const Issues = styled.section`
-    margin-top: 80px;
-
-    a {
+        justify-content: center;
         background: #fff;
-        border-radius: 5px;
-        width: 100%;
-        padding: 24px;
-        display: flex;
-        text-decoration: none;
-        align-items: center;
-        transition: 0.5s;
+        max-width: 600px;
+        min-width: 450px;
+        border-radius: 10px;
+        padding: 30px;
+        .recovery-div{
+            display: inline-block;
 
-        &:hover{
-            transform: translateX(10px)
+            a {
+                color: red;
+            }
         }
-
-        & + a {
-            margin-top: 18px;
+        h4{
+            font-size: 25px;
+            margin-bottom:20px;
+            text-align: center;
         }
+        form{
+            display: inline-block;
+            margin: 0 auto;
 
-        div {
-            margin-left: 16px;
+            input{
+                    display: initial;
+                    border: none;
+                    font-size: 16px;
+                    padding: 8px;
+                    font-weight: 300;
+                    text-align:left;
+                    width: 85%;
+                    margin: 25px;
+                    border-bottom: 2px solid #666;
+                    transition: 0.5s;
 
-            strong {
+                    &:focus{
+                        border-bottom: 3px solid #8C52E5;
+
+                    }
+                }
+
+                button{
+                margin: auto;
+                margin-top: 45px;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                border: none;
+                border-radius: 100px;
+                padding: 15px 30px;
+                width: 80%;
+                text-align: left;
+                transition: 0.5s;
+                color: #8C52E5;
                 font-size: 20px;
-                color: #3D3D4d;
-            }
-
-            p {
-                font-size: 18px;
-                color: #cbcbd6;
+                font-weight: 300;
+                border: 3px solid #8C52E5;
+                margin: 0 auto;
+                &:hover{
+                    background: #68DE5A;
+                }
             }
         }
-        svg {
-            margin-left: auto;
-            color: #cbcbd6;
-        }
+    }
+`
 
+export const LinkSections = styled.div`
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `

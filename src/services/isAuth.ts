@@ -1,2 +1,8 @@
-export const TOKEN_KEY: string = '@tokenApp';
-export const isAuth = null || localStorage.getItem('@tokenApp');
+export const isAuthenticated = (): boolean => {
+    const TokenStorage = localStorage.getItem('@tokenApp')
+    if (TokenStorage){
+        return true
+    } else {
+        return false
+    }
+};

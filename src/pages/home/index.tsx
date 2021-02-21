@@ -1,11 +1,14 @@
 import React, { useState, FormEvent } from 'react';
 import { Link, useHistory } from "react-router-dom";
-import { Home } from "./style"
+import { toast } from 'react-toastify'
+import { Container, Header, SectionOne, Form , SideLeft, SideRight} from "./style"
 import Logo from "../../img/gama-academy-logo.png";
+import Arrow from "../../img/arrow.png";
+import ArrowGray from "../../img/arrowgray.png";
 
 import api from '../../services/api'
 
-const HomePage: React.FC = () => {
+const Home: React.FC = () => {
 
   const history = useHistory()
 
@@ -24,11 +27,11 @@ const HomePage: React.FC = () => {
       login: userName,
       senha: password
     }
+    
     if ( password !== confirmPass ) {
-      alert('Confirm pass') 
+      toast.error('Sua senha está incorreta!') 
       return;
     }
-
 
     try {
       api.post(`usuarios`, postData ).then(
@@ -36,49 +39,52 @@ const HomePage: React.FC = () => {
           if (response.status === 200){
             history.push('/login')
           } else {
-            alert('Algo de errado, tente novamente em alguns minutos.')
+            toast.error('Algo deu errado, tente novamente em alguns minutos.')
           }
          }
       )
     } catch (e) {
-      alert('algo deu errado')
+      toast.error('algo deu errado')
     }
-    
-
-
   }
 
   return (
-    <Home>
-      <Link to="/">
-        <img src={Logo} alt=""/>
-      </Link>
-      <div className="account">
-        <div >
+    
+    <Container>
+      <Header>
+          <Link to="/">
+            <img className="logo-gama" src={Logo} alt=""/>
+          </Link>
+      </Header>
+      <SectionOne>       
+        <SideLeft>            
           <h2>Gama Bank é um projeto de nossos alunos.</h2>
           <h2>Já tem conta?</h2>
           <Link to="/login">
-            <button>Acessar</button>
-          </Link>
-        </div>
-        <div className="open-account">
-          <div>
-            <h4>
-              Peça sua conta e cartão de crédito Gama Bank
-            </h4>
-          </div>
-          <form onSubmit={createAccount}>
+            <button>Acessar <img src={Arrow} alt=""/></button>
+          </Link>        
+        </SideLeft>  
+        <SideRight>             
+     
+          <Form onSubmit={createAccount}>  
+          <h4>
+            Peça sua conta e cartão de crédito Gama Bank
+          </h4>             
             <input type="text"  value={ cpf } onChange={  e => setCpf( e.target.value)  } placeholder="Digite seu CPF"/>
             <input type="text" value={ name } onChange={  e => setName(e.target.value)  } placeholder="Nome completo"/>
             <input type="text" value={ userName } onChange={  e =>  setUserName(e.target.value) } placeholder="Nome do usuário"/>
             <input type="password" value={ password } onChange={  e => setPassword(e.target.value) } placeholder="Digite sua senha"/>
             <input type="password" value={ confirmPass } onChange={  e => setConfirmPass(e.target.value) } placeholder="Confirme sua senha"/>
-            <button type="submit">Continuar</button>
-          </form>
-        </div>
-      </div>
-    </Home>
+            
+            <Link to="/login">
+              <button>Continuar <img src={ArrowGray} alt=""/></button>
+            </Link>  
+          </Form>            
+        </SideRight> 
+      </SectionOne>    
+    </Container>
+    
     );
 }
 
-export default HomePage;
+export default Home;

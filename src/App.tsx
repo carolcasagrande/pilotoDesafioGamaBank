@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 
 import GlobalStyle from './style/global'
 
+
+
 import Routes from './routes';
 
 const App: React.FC = () => {
@@ -13,6 +15,7 @@ const App: React.FC = () => {
       <Routes/>
     </BrowserRouter>
     <GlobalStyle />
+    
     </>
   );
 }
