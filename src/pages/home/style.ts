@@ -13,6 +13,15 @@ export const Header = styled.div`
     height: 10vh;
     img{
         padding: 40px;
+
+    }
+
+    @media(max-width: 700px){        
+        width:100vw;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        margin-top: 20px;        
     }
 `
 
@@ -32,6 +41,13 @@ export const SectionOne = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media(max-width: 700px){
+        flex-wrap: wrap;
+        justify-content:center;
+        background-image: unset;
+        padding:0;
+    }
     
 
 `
@@ -70,6 +86,17 @@ export const SideLeft = styled.div`
             width:16px;
             height: 16px;
         }
+
+        @media(max-width: 700px){
+        margin: 50px 0;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
     
 `
 
@@ -124,6 +151,11 @@ export const Form = styled.form`
             width:16px;
             height: 16px;
         }
-`
 
+    @media(max-width: 700px){
+    margin-bottom: 50px;
+
+    }
+
+`
 

@@ -1,7 +1,6 @@
 import styled, {css} from "styled-components";
 
-export const RecoveryContainer = styled.div`
-    
+export const RecoveryContainer = styled.div`    
     background-color: #8C52E5;    
     width:100%;
     //height: 100vh;
@@ -11,6 +10,14 @@ export const Header = styled.div`
     height: 10vh;
     img{
         padding: 40px;
+    }
+    
+    @media(max-width: 700px){
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        margin-top: 20px;        
     }
 `
 export const Content = styled.div`
@@ -79,6 +86,14 @@ export const Form = styled.form`
         width:16px;
         height: 16px;
         }
+
+    @media(max-width: 700px){
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+    width:80%;     
+    
+}
 `
 
 
